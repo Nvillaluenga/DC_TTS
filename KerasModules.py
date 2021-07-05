@@ -19,14 +19,15 @@ class HighwayNet(tf.keras.layers.Layer):
 
 
 class HighwayCNet(tf.keras.layers.Layer):
-    def __init__(self, filters, kernel_size, dilation_rate, dropout_rate):
+    def __init__(self, filters, kernel_size, dilation_rate=1, dropout_rate=0):
         super(HighwayCNet, self).__init__()
         self.conv1d = tf.keras.layers.Conv1D(
             filters=2*filters,
             kernel_size=kernel_size,
             dilation_rate=dilation_rate,
             kernel_initializer=tf.keras.initializers.variance_scaling,
-            use_bias=True)
+            use_bias=True,
+            padding="SAME")
         self.normalize = tf.keras.layers.LayerNormalization()
         self.dropout = tf.keras.layers.Dropout(dropout_rate)
 
