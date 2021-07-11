@@ -2,6 +2,10 @@
 datasets/
 .vscode/
 
+# Preprocess
+mags/
+mels/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

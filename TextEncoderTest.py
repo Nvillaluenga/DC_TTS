@@ -4,6 +4,7 @@ import re
 import numpy as np
 from Hyperparams import Hyperparams as hp
 from TextEncoder import TextEncoder
+from DataLoad import text_normalize, load_vocab
 
 
 class TextEncoderTest(unittest.TestCase):
@@ -28,21 +29,10 @@ class TextEncoderTest(unittest.TestCase):
 
 # TODO delete all this function and put them in a pre processor / feeder (Still need to do that)
 def preprocess_text(text):
-    char2idx = {char: idx for idx, char in enumerate(hp.vocab)}
-    idx2char = {idx: char for idx, char in enumerate(hp.vocab)}
+    char2idx, _ = load_vocab()
     text = text_normalize(text)
     text_normalized = [char2idx[char] for char in text]
     return text_normalized
-
-
-def text_normalize(text):
-    text = ''.join(char for char in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(char) != 'Mn')  # Strip accents
-
-    text = text.lower()
-    text = re.sub("[^{}]".format(hp.vocab), " ", text)
-    text = re.sub("[ ]+", " ", text)
-    return text
 
 
 if __name__ == "__main__":
