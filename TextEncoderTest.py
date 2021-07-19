@@ -1,8 +1,5 @@
 import unittest
-import unicodedata
-import re
 import numpy as np
-from Hyperparams import Hyperparams as hp
 from TextEncoder import TextEncoder
 from DataLoad import text_normalize, load_vocab
 
@@ -27,7 +24,6 @@ class TextEncoderTest(unittest.TestCase):
         assert [2, 11, 512] == output.shape
 
 
-# TODO delete all this function and put them in a pre processor / feeder (Still need to do that)
 def preprocess_text(text):
     char2idx, _ = load_vocab()
     text = text_normalize(text)
