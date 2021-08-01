@@ -66,8 +66,9 @@ class HighwayCNet_experimental(tf.keras.layers.Layer):
         tensor = self.conv1d(inputs)
         H1, H2 = tf.split(tensor, 2, axis=-1)
         H1 = self.normalize(H1)
-        H2 = self.normalize(H2)
         H1 = self.T(H1)
+        H1 = self.normalize(H1)
+        H2 = self.normalize(H2)
         tensor = H1*H2 + (1.-H1)*_inputs
         tensor = self.dropout(tensor, training=is_training)
 
