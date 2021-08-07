@@ -5,15 +5,11 @@ By kyubyong park. kbpark.linguist@gmail.com.
 https://www.github.com/kyubyong/dc_tts
 '''
 from __future__ import print_function, division
-import tensorflow as tf
 from Hyperparams import Hyperparams as hp
-from scipy import signal
-import matplotlib.pyplot as plt
 
 import numpy as np
 import librosa
 import os
-import copy
 import matplotlib
 matplotlib.use('pdf')
 

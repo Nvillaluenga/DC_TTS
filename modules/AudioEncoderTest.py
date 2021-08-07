@@ -15,7 +15,8 @@ class AudioEncoderTest(unittest.TestCase):
 
     def testAudioEncoder(self):
         # Arrange
-        input = np.load(path.join("tests_resources", "mel_test.npy"))
+        input = np.load(
+            path.join(path.pardir, "tests_resources", "mel_test.npy"))
         input = tf.expand_dims(input, axis=0)
         audioEncoder = AudioEncoder()
         # Act

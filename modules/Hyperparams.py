@@ -37,7 +37,7 @@ class Hyperparams:
     attention_win_size = 3
 
     # data
-    data = os.path.join("datasets", "EN", "LJSpeech-1.1")
+    data = os.path.join(os.path.pardir, "datasets", "EN", "LJSpeech-1.1")
     # data = "/data/private/voice/kate"
     test_data = 'harvard_sentences.txt'
     vocab = "PE abcdefghijklmnopqrstuvwxyz'.?"  # P: Padding, E: EOS.

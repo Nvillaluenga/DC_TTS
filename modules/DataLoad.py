@@ -7,8 +7,6 @@ https://www.github.com/kyubyong/dc_tts
 # TODO Refactor all this
 from Hyperparams import Hyperparams as hp
 import numpy as np
-import tensorflow as tf
-from utils import *
 import codecs
 import re
 import os

@@ -1,7 +1,7 @@
 import tensorflow as tf
-from Hyperparams import Hyperparams as hp
+from modules.Hyperparams import Hyperparams as hp
 from tensorflow.keras.layers import Conv1D, Conv1DTranspose
-from KerasModules import HighwayCNet
+from modules.KerasModules import HighwayCNet
 
 
 class SSRN(tf.keras.Model):

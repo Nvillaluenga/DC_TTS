@@ -1,6 +1,6 @@
 import unittest
 import tensorflow as tf
-from Hyperparams import Hyperparams as hp
+from modules.Hyperparams import Hyperparams as hp
 from SSRN import SSRN
 
 
