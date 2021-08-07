@@ -99,4 +99,5 @@ class TextEncoder(tf.keras.Model):
         x = self.HC_12(x, is_training)
         x = self.HC_13(x, is_training)
         x = self.HC_14(x, is_training)
-        return x
+        K, V = tf.split(x, 2, -1)
+        return K, V

@@ -17,7 +17,8 @@ class AttentionTest(unittest.TestCase):
         K = tf.random.normal(shape=(hp.B, hp.max_N, hp.d))
         V = tf.random.normal(shape=(hp.B, hp.max_N, hp.d))
         # Act
-        output, _, _ = Attention(Q, K, V)
+        attention = Attention()
+        output, _, _ = attention.calculateAttention(Q, K, V)
         # Assert
         print(output.shape)
         assert hp.B == output.shape[0]

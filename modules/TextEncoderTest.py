@@ -1,5 +1,5 @@
 import unittest
-import numpy as np
+import tensorflow as tf
 from TextEncoder import TextEncoder
 from DataLoad import text_normalize, load_vocab
 
@@ -14,14 +14,14 @@ class TextEncoderTest(unittest.TestCase):
 
     def testTextEncoder(self):
         # Arrange
-        text1 = preprocess_text("Hello World")
-        text2 = preprocess_text("Hola Mundo!")
-        inputs = np.append([text1], [text2], axis=0)
+        input = preprocess_text("Hello World")
+        input = tf.expand_dims(input, axis=0)
         textEncoder = TextEncoder()
         # Act
-        output = textEncoder(inputs, True)
+        K, V = textEncoder(input, True)
         # Assert
-        assert [2, 11, 512] == output.shape
+        assert [1, 11, 256] == K.shape
+        assert [1, 11, 256] == V.shape
 
 
 def preprocess_text(text):

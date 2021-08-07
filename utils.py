@@ -5,7 +5,7 @@ By kyubyong park. kbpark.linguist@gmail.com.
 https://www.github.com/kyubyong/dc_tts
 '''
 from __future__ import print_function, division
-from Hyperparams import Hyperparams as hp
+from modules.Hyperparams import Hyperparams as hp
 
 import numpy as np
 import librosa
